@@ -1,0 +1,1042 @@
+Build a complete, polished API & MCP Playground web application using:
+
+    HTML5
+
+    CSS3
+
+    Vanilla JavaScript
+
+    No React
+
+    No Vue
+
+    No Angular
+
+    No TypeScript
+
+    No build system required for the frontend
+
+The application must provide a beautiful UI where the user can explore, test, and execute the 20 APIs and 20 MCP servers listed below.
+
+The application should be designed as a learning/demo playground. Every API/MCP entry must have a working example, description, request parameters, response viewer, loading state, error handling, and copyable JavaScript code.
+1. APIs to include
+
+Create an API catalog containing these 20 APIs:
+
+    Open-Meteo — Weather
+
+    REST Countries — Country information
+
+    OpenStreetMap/Nominatim — Geocoding
+
+    Wikipedia API — Knowledge/search
+
+    Wikidata — Structured knowledge
+
+    GitHub API — Repositories
+
+    GitLab API — Projects
+
+    Open Library API — Books
+
+    TMDB API — Movies/TV
+
+    Jikan API — Anime
+
+    PokéAPI — Pokémon
+
+    CoinGecko API — Cryptocurrency
+
+    Frankfurter API — Currency conversion
+
+    NASA APIs — Space/astronomy
+
+    OpenAlex — Academic research
+
+    Crossref API — Publications
+
+    Hacker News API — Technology news
+
+    TheSportsDB — Sports
+
+    Pexels API — Images
+
+    LibreTranslate — Translation
+
+For each API create:
+
+    Name
+
+    Logo/icon placeholder
+
+    Category
+
+    Description
+
+    Official API website
+
+    Documentation link
+
+    Free/free-tier status
+
+    Whether an API key is required
+
+    Example use case
+
+    Example endpoint
+
+    HTTP method
+
+    Request parameters
+
+    Request headers
+
+    Request body if applicable
+
+    "Run API" button
+
+    "Copy JavaScript" button
+
+    "Open documentation" button
+
+    Form fields for user-editable parameters
+
+    JSON response viewer
+
+    Human-readable result viewer where appropriate
+
+    HTTP status code
+
+    Response time
+
+    Error message area
+
+2. API examples
+
+Use realistic examples.
+
+Example Open-Meteo:
+
+GET:
+
+https://api.open-meteo.com/v1/forecast?latitude=18.52&longitude=73.85&current=temperature_2m
+
+The UI should allow the user to change latitude and longitude.
+
+Example REST Countries:
+
+GET:
+
+https://restcountries.com/v3.1/name/India
+
+Display:
+
+    Country
+
+    Capital
+
+    Population
+
+    Region
+
+    Currency
+
+    Languages
+
+    Flag
+
+Example GitHub:
+
+GET:
+
+https://api.github.com/repos/nodejs/node
+
+Display:
+
+    Repository name
+
+    Stars
+
+    Forks
+
+    Open issues
+
+    Description
+
+    URL
+
+Example Open Library:
+
+GET:
+
+https://openlibrary.org/search.json?q=harry+potter
+
+Display the first 10 results as book cards.
+
+Example CoinGecko:
+
+Use a current supported public/free endpoint if available.
+
+Allow:
+
+    Cryptocurrency
+
+    Currency
+
+Display price and relevant market information.
+
+Use equivalent suitable examples for all remaining APIs.
+
+IMPORTANT:
+
+Do not blindly assume every API is permanently free or requires no API key.
+
+For each service show a badge such as:
+
+    "Free — no key"
+
+    "Free tier"
+
+    "API key required"
+
+    "Demo only"
+
+    "May require account"
+
+    "Service restrictions apply"
+
+Before using an endpoint, verify that it is currently valid where possible.
+
+Do not hard-code fake successful responses.
+
+If an API cannot safely be called directly from the browser because of CORS, authentication, rate limits, or provider restrictions, implement a backend proxy or clearly mark the example as requiring the backend.
+3. API playground UI
+
+Create a left sidebar containing:
+
+    Dashboard
+
+    All APIs
+
+    Free/no-key APIs
+
+    API-key APIs
+
+    Weather
+
+    Maps
+
+    Knowledge
+
+    Developer
+
+    Books
+
+    Movies
+
+    Finance
+
+    Science
+
+    News
+
+    Sports
+
+    Images
+
+    Translation
+
+    MCP Servers
+
+    Settings
+
+The main area should contain:
+
+    Search box
+
+    Category filter
+
+    Free-only filter
+
+    API-key-required filter
+
+    Sort dropdown
+
+    API cards
+
+Each API card should display:
+
+[API icon]
+
+API Name
+
+Category
+
+Free status
+
+API key status
+
+Short description
+
+[Try API]
+
+[Documentation]
+
+Clicking "Try API" opens a detailed API playground.
+4. API playground layout
+
+Use a layout similar to a modern API testing tool.
+
+Top:
+
+API name
+Description
+Free status
+Authentication status
+
+Middle:
+
+REQUEST
+
+Method dropdown
+
+URL input
+
+Parameters
+
+Headers
+
+Body
+
+[RUN REQUEST]
+
+Bottom:
+
+RESPONSE
+
+Status: 200 OK
+
+Response time: 234ms
+
+JSON viewer
+
+Human-readable result
+
+Copy response
+
+Download JSON
+5. JavaScript code generator
+
+For every API dynamically generate JavaScript code based on the current parameters.
+
+Example:
+
+const response = await fetch(
+"https://api.open-meteo.com/v1/forecast?latitude=18.52&longitude=73.85&current=temperature_2m"
+);
+
+const data = await response.json();
+
+console.log(data);
+
+Show this in a syntax-highlighted code block.
+
+Provide:
+
+[COPY CODE]
+6. MCP section
+
+Create a separate "MCP Servers" section.
+
+Include these 20 MCP examples:
+
+    Filesystem MCP
+
+    Git MCP
+
+    Fetch MCP
+
+    Memory MCP
+
+    Sequential Thinking MCP
+
+    Time MCP
+
+    GitHub MCP
+
+    GitLab MCP
+
+    PostgreSQL MCP
+
+    SQLite MCP
+
+    MySQL MCP
+
+    MongoDB MCP
+
+    Redis MCP
+
+    Playwright MCP
+
+    Puppeteer MCP
+
+    Docker MCP
+
+    Kubernetes MCP
+
+    Slack MCP
+
+    Notion MCP
+
+    Linear MCP
+
+IMPORTANT ARCHITECTURE REQUIREMENT:
+
+Do NOT pretend that a browser-only HTML/JavaScript application can directly execute arbitrary local MCP servers.
+
+MCP support must use a backend Node.js MCP client/proxy.
+
+Create:
+
+/frontend
+index.html
+styles.css
+app.js
+
+/backend
+server.js
+mcp-client.js
+package.json
+
+/config
+mcp-config.example.json
+
+The frontend communicates with the backend using HTTP.
+
+The backend communicates with MCP servers using the official MCP JavaScript/TypeScript SDK.
+7. MCP UI
+
+Create an MCP server catalog similar to the API catalog.
+
+Each MCP card must show:
+
+    Server name
+
+    Category
+
+    Description
+
+    Local/remote
+
+    Authentication
+
+    Free/open-source status
+
+    Tools available
+
+    Resources available
+
+    Installation information
+
+Buttons:
+
+[Connect]
+
+[List Tools]
+
+[Run Tool]
+
+[View Configuration]
+
+[Copy Example]
+8. MCP connection panel
+
+When the user clicks an MCP server, show:
+
+MCP SERVER
+
+Server name
+
+Connection type:
+
+    stdio
+
+    HTTP/SSE/streamable HTTP where supported
+
+Command:
+
+Arguments:
+
+Environment variables:
+
+[CONNECT]
+
+After connecting display:
+
+Connection status:
+● Connected
+
+Server information
+
+Available tools:
+
+Example:
+
+Filesystem MCP
+
+Tools:
+
+    read_file
+
+    write_file
+
+    list_directory
+
+    create_directory
+
+Allow the user to select a tool.
+9. MCP tool execution UI
+
+When a tool is selected, dynamically generate its input form from the tool's input schema.
+
+For example:
+
+Tool:
+
+read_file
+
+Input:
+
+Path:
+[________________________]
+
+[RUN TOOL]
+
+Then show:
+
+TOOL RESULT
+
+JSON
+
+Human-readable output
+
+Execution time
+
+Errors
+10. MCP tool schema discovery
+
+Do not hard-code the tool input form where possible.
+
+Use MCP's tool discovery mechanism.
+
+The backend should:
+
+    Connect to MCP server.
+
+    List available tools.
+
+    Read each tool's name.
+
+    Read description.
+
+    Read input schema.
+
+    Dynamically send this information to the frontend.
+
+    Generate the appropriate form.
+
+    Send user input back to the backend.
+
+    Call the selected MCP tool.
+
+    Return the result to the browser.
+
+This should work with different MCP servers rather than being hard-coded exclusively for one server.
+11. MCP configuration
+
+Create an example configuration:
+
+{
+"mcpServers": {
+"filesystem": {
+"command": "npx",
+"args": [
+"..."
+]
+},
+"git": {
+"command": "npx",
+"args": [
+"..."
+]
+}
+}
+}
+
+Do not invent package names.
+
+Where the exact official package/repository is required, use the currently maintained official MCP implementation or clearly mark the configuration as an example requiring adjustment.
+12. MCP safety
+
+Implement strict safety controls.
+
+Never allow an MCP server to access arbitrary files or execute arbitrary commands without explicit configuration.
+
+Filesystem access must use an allowlisted directory.
+
+Do not expose arbitrary shell execution to the browser.
+
+Never send environment variables/secrets back to the frontend.
+
+Never display API keys in the UI after they are saved.
+
+Do not store secrets in localStorage.
+
+Use environment variables on the backend.
+13. API key management
+
+Create a Settings page.
+
+Allow configuration of API keys for services that require them.
+
+Example:
+
+TMDB API Key
+[****************]
+
+Pexels API Key
+[****************]
+
+NASA API Key
+[****************]
+
+etc.
+
+Store these only on the backend in environment variables.
+
+Create:
+
+.env.example
+
+Example:
+
+TMDB_API_KEY=
+PEXELS_API_KEY=
+NASA_API_KEY=
+
+Never expose these values to browser JavaScript.
+14. Dashboard
+
+Create a professional dashboard.
+
+Display cards:
+
+Total APIs
+20
+
+No-key APIs
+X
+
+Free-tier APIs
+X
+
+MCP Servers
+20
+
+Connected MCP Servers
+X
+
+API Requests
+X
+
+MCP Tool Calls
+X
+
+Errors
+X
+
+Recent activity
+
+Show a request history table:
+
+Time
+Type
+Service
+Operation
+Status
+Duration
+15. Request history
+
+Store request history in memory on the backend.
+
+For every API request store:
+
+    Timestamp
+
+    API
+
+    URL
+
+    Method
+
+    Status
+
+    Duration
+
+    Success/failure
+
+For MCP calls store:
+
+    Timestamp
+
+    MCP server
+
+    Tool
+
+    Status
+
+    Duration
+
+    Success/failure
+
+Provide:
+
+[Clear History]
+16. Response viewer
+
+Build a proper JSON viewer.
+
+Requirements:
+
+    Syntax highlighting
+
+    Expand/collapse objects
+
+    Expand/collapse arrays
+
+    Copy JSON
+
+    Download JSON
+
+    Pretty-print
+
+    Raw JSON toggle
+
+Do not simply put the response into a plain textarea.
+17. Human-readable results
+
+Where possible, convert API responses into useful UI cards.
+
+Examples:
+
+Weather:
+
+Temperature
+Wind
+Humidity
+Weather condition
+
+GitHub:
+
+Repository
+Stars
+Forks
+Issues
+
+Books:
+
+Cover
+Title
+Author
+Publication year
+
+Country:
+
+Flag
+Capital
+Population
+Currency
+
+Movies:
+
+Poster
+Title
+Release date
+Rating
+
+Crypto:
+
+Price
+24h change
+Market cap
+
+Do equivalent useful visualizations for the other APIs.
+18. Error handling
+
+Handle:
+
+    Network errors
+
+    HTTP 400
+
+    HTTP 401
+
+    HTTP 403
+
+    HTTP 404
+
+    HTTP 429
+
+    HTTP 500
+
+    Timeout
+
+    Invalid JSON
+
+    Missing API key
+
+    CORS problems
+
+    MCP connection failure
+
+    MCP tool failure
+
+Show user-friendly explanations.
+
+Example:
+
+429 Too Many Requests
+
+"This service has rate-limited the request. Please wait and try again."
+
+Do not expose backend stack traces to the user.
+19. Responsive design
+
+The application must work on:
+
+    Desktop
+
+    Tablet
+
+    Mobile
+
+Desktop:
+
+Sidebar + main content
+
+Mobile:
+
+Collapsible navigation
+
+API cards should become single-column.
+20. Visual design
+
+Use a modern developer-tool aesthetic.
+
+Preferred style:
+
+    Dark mode by default
+
+    Optional light mode
+
+    Dark navy/black background
+
+    Blue/purple accent
+
+    Rounded cards
+
+    Subtle borders
+
+    Good typography
+
+    Monospace font for code
+
+    Smooth hover states
+
+    Loading animations
+
+    Toast notifications
+
+Do not make the interface look like a generic Bootstrap template.
+21. Technology restrictions
+
+Frontend:
+
+    HTML
+
+    CSS
+
+    Vanilla JavaScript
+
+Backend:
+
+    Node.js
+
+    Express or native Node HTTP server
+
+    Official MCP JavaScript SDK
+
+Do not use React.
+
+Do not use TypeScript.
+
+Do not require a frontend build step.
+
+The project should run with:
+
+npm install
+npm start
+22. API architecture
+
+Create a centralized API configuration such as:
+
+const apiDefinitions = [
+{
+id: "open-meteo",
+name: "Open-Meteo",
+category: "Weather",
+auth: "none",
+method: "GET",
+...
+}
+];
+
+Do not duplicate API request logic throughout the application.
+
+Create a generic API executor:
+
+async function executeApiRequest(apiDefinition, params) {
+...
+}
+23. MCP architecture
+
+Create a centralized MCP registry.
+
+Example structure:
+
+const mcpServers = [
+{
+id: "filesystem",
+name: "Filesystem MCP",
+transport: "stdio",
+...
+}
+];
+
+Create reusable functions:
+
+connectMcpServer()
+listMcpTools()
+callMcpTool()
+disconnectMcpServer()
+
+Do not create 20 completely separate implementations.
+24. API and MCP code examples
+
+Every API and MCP entry must have a "Code Example" tab.
+
+Tabs:
+
+Request
+Response
+JavaScript
+Configuration
+
+For APIs, show the actual fetch() code.
+
+For MCP, show the Node.js MCP client code.
+
+Example:
+
+const result = await client.callTool({
+name: "read_file",
+arguments: {
+path: "./example.txt"
+}
+});
+25. Documentation
+
+Create a README.md containing:
+
+    Project overview
+
+    Architecture
+
+    Installation
+
+    Running frontend/backend
+
+    Environment variables
+
+    API key configuration
+
+    MCP configuration
+
+    Adding a new API
+
+    Adding a new MCP server
+
+    Security considerations
+
+    CORS considerations
+
+    Rate-limit considerations
+
+    Troubleshooting
+
+26. Important correctness requirements
+
+Do not fabricate API responses.
+
+Do not pretend an API is free if it requires payment.
+
+Clearly distinguish:
+
+FREE
+FREE TIER
+API KEY REQUIRED
+ACCOUNT REQUIRED
+LOCAL
+OPEN SOURCE
+DEMO ONLY
+
+Do not claim that an MCP server itself makes an underlying paid API free.
+
+Where a service's current API endpoint, package name, authentication mechanism, or free-tier policy is uncertain, make the configuration clearly editable and mark it as requiring verification instead of inventing details.
+27. Deliverables
+
+Generate the complete project.
+
+Return all required files:
+
+frontend/index.html
+frontend/styles.css
+frontend/app.js
+
+backend/server.js
+backend/mcp-client.js
+backend/package.json
+
+.env.example
+mcp-config.example.json
+README.md
+
+The application must be runnable after:
+
+npm install
+npm start
+
+Provide the complete source code, not pseudocode.
+
+Do not omit implementation details with comments such as:
+
+// implement this
+// add API here
+// MCP logic goes here
+
+Everything should be implemented.
+
+If a particular third-party service cannot be directly demonstrated because it requires credentials, implement the integration and provide a clear configuration screen rather than replacing it with fake data.
+
+The final result should feel like a real "Free API & MCP Explorer / Playground" developer tool, not a static list of APIs.
+
